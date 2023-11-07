@@ -45,6 +45,7 @@ pipeline {
     stage('publish') {
       steps {
         dir('app') {
+          sh "scl enable rh-dotnet22 bash"
           sh "which dotnet"
           sh "dotnet publish -c Release /p:MicrosoftNETPlatformLibrary=Microsoft.NETCore.App"
         }
