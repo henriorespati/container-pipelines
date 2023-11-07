@@ -45,6 +45,7 @@ pipeline {
     stage('publish') {
       steps {
         dir('app') {
+          sh "which dotnet"
           sh "dotnet publish -c Release /p:MicrosoftNETPlatformLibrary=Microsoft.NETCore.App"
         }
       }
